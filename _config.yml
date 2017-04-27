@@ -92,13 +92,13 @@ about:
     icon: fa-email
     url: mailto:posta@huseyinkozan.com.tr
     title: posta@huseyinkozan.com.tr
-  - label: twitter
-    icon: fa-twitter
-    url: https://twitter.com/huseyinkozan
-    title: huseyinkozan
   - label: github
     icon: fa-github
     url: https://github.com/huseyinkozan
+    title: huseyinkozan
+  - label: twitter
+    icon: fa-twitter
+    url: https://twitter.com/huseyinkozan
     title: huseyinkozan
 
 # Links widget. Empty links will hide widget.
