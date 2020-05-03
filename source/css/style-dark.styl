@@ -6,6 +6,7 @@ body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,img,blockquote,button,pre,fieldset,fo
 h1,h2,h3,h4,h5,h6
   font-weight: bold
   overflow: hidden
+  color: #6eb4cd
 s,i,u,em
   font-style: normal
 img,button
@@ -33,13 +34,13 @@ a
 .hide
   display none
   opacity: 0
-  height: 0px
+  height: 0
 blockquote,.stressed
   -moz-box-sizing: border-box
   box-sizing: border-box
   margin: 1.5em 0 1.5em 1em
   padding: 10px
-  color: #555
+  color: #aaa
   border: 1px solid #e6e6e6
   border-left: 5px solid #40759b
 strong, b, em
@@ -103,16 +104,33 @@ strong, b, em
 .fa-email:before
   content: "\e015"
 
+/* scrollbar */
+::-webkit-scrollbar
+  width:12px;
+/* 滚动槽 */
+::-webkit-scrollbar-track
+  -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3)
+  border-radius:10px
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb
+  border-radius:10px
+  background:#021825
+  box-shadow: inset 0 0 5px #4169b9
+::-webkit-scrollbar-thumb:window-inactive
+  background:#021825
+
+
 /* layout */
 body
   font-family: "Source Code Pro", Tahoma, "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei Light", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   font-size: 14px
-  color: #333
+  color: #999
   width:100%
   height:100%
-  background: #D8E2EB url(../img/bg.jpg) no-repeat top center
+  background: #010302 url(../img/bg-dark.jpg) no-repeat top center
+  background-attachment: fixed
 .layout-g
   letter-spacing: -.31em
   *letter-spacing normal
@@ -200,12 +218,12 @@ body
     margin-bottom: 20px
     padding: 10px 20px 20px 20px
     border-radius: 4px
-    -webkit-box-shadow: 1px 2px 3px #adc2d7
-    box-shadow: 1px 2px 3px #adc2d7
+    -webkit-box-shadow: 0 0 20px #adc2d7 inset
+    box-shadow: 0 0 20px #adc2d7 inset
     border: 1px solid #adc2d7
-    background: #FFF
+    background: rgba(0,0,0,0.8)
     a
-      color:#333
+      color:#999
       &:hover
         color: #40759b
         text-decoration underline
@@ -247,7 +265,7 @@ body
   bottom: -52px
   right:0
   padding: 20px 0
-  color: #333
+  color: #FFF
   width: 25%
   label
     position relative
@@ -261,6 +279,7 @@ body
       position: absolute
       left: 15px
       top: 9px
+      color: #40759b
   input
     box-sizing border-box
     height: 32px
@@ -268,10 +287,11 @@ body
     line-height: 16px
     width: 100%
     border-radius: 15px
-    background: #FFF
-    -webkit-box-shadow: 1px 2px 3px #adc2d7;
-    box-shadow: 1px 2px 3px #adc2d7;
-    border: 1px solid #adc2d7;
+    color: #FFF
+    background: rgba(0,0,0,.8)
+    -webkit-box-shadow: 0 0 20px #adc2d7 inset
+    box-shadow: 0 0 20px #adc2d7 inset
+    border: 1px solid #adc2d7
 #result-wrap
   position: absolute
   top: 56px
@@ -279,11 +299,11 @@ body
   left: -50px;
   box-sizing content-box
   padding 20px
-  background: #FFF
-  color: #333
+  background: rgba(0,0,0,.9)
+  color: #999
   border-radius: 4px
-  -webkit-box-shadow: 1px 2px 3px #adc2d7
-  box-shadow: 1px 2px 3px #adc2d7
+  -webkit-box-shadow: 0 0 20px #adc2d7 inset
+  box-shadow: 0 0 20px #adc2d7 inset
   border: 1px solid #adc2d7
   &:before
     content ''
@@ -293,16 +313,16 @@ body
     border-style: solid
     border-color: #adc2d7 transparent
     left: 56px
-    top: -12px
+    top: -13px
   &:after
     content ''
     position: absolute
     display: inline-block
     border-width: 0 12px 12px 12px
     border-style: solid
-    border-color: #FFF transparent
+    border-color: rgba(0, 0, 0, 0.5) transparent
     left: 56px
-    top: -10px
+    top: -12px
 #result-mask
   position: fixed
   left:0
@@ -334,7 +354,7 @@ body
       white-space: nowrap
       text-overflow: ellipsis
       font-size: 14px
-      color: #40759b
+      color: #b3d2ef
       &:hover
         text-decoration underline
     .time
@@ -394,12 +414,12 @@ body
 /* post */
 .post
   padding: 25px
-  background: #FFF
   border-radius: 4px
-  -webkit-box-shadow: 1px 2px 3px #ADC2D7
-  box-shadow: 1px 2px 3px #ADC2D7
-  border: 1px solid #ADC2D7
+  -webkit-box-shadow: 0 0 20px #adc2d7 inset
+  box-shadow: 0 0 20px #adc2d7 inset
+  border: 1px solid #adc2d7
   margin-bottom: 40px
+  background: rgba(0,0,0,0.8)
   .post-title
     margin: 0
     color: #40759b
@@ -416,7 +436,7 @@ body
   .post-meta
     padding: 0
     margin: 10px 0 0
-    color: #333
+    color: #999
     font-size 14px
     line-height: 24px
     min-height: 24px
@@ -476,7 +496,7 @@ body
     clear: left
     font-size: 15px
     line-height: 1.77
-    color: #333
+    color: #aaa
     padding-top: 15px
     text-align: justify
     text-justify: distribute
@@ -497,8 +517,8 @@ body
         margin 0 5px
         padding: 0 5px
         font-family: Source Code Pro,Monaco,Menlo,Consolas,monospace
-        color: #4d4d4c
-        background: #eee
+        color: #adc2d7
+        background: #050f1b
         font-size: .95em
         word-break: break-all
       a
@@ -540,8 +560,8 @@ body
         margin 0 5px
         padding: 0 5px
         font-family: Source Code Pro,Monaco,Menlo,Consolas,monospace
-        color: #4d4d4c
-        background: #eee
+        color: #adc2d7
+        background: #050f1b
         font-size: .95em
         word-break: break-all
       a
@@ -585,13 +605,15 @@ body
     font-weight bold
     font-size 24px
     letter-spacing: -1px;
-    background: #D8E2EB
+    background: #010302
     height: 100px;
     width: 100px;
     border-radius: 50%;
     text-align center
     line-height: 100px;
     color: #5483B1
+    -webkit-box-shadow: 0 0 10px #adc2d7 inset
+    box-shadow: 0 0 10px #adc2d7 inset
     &:before
       font-family: "iconfont" !important;
       font-weight normal
@@ -599,7 +621,7 @@ body
       margin-right .1em
 .archive-wrap
   position: relative
-  border-left: 2px solid #D8E2EB
+  border-left: 2px solid #40759b
   margin-left: 140px
   padding: 3em 0;
   &.tag-cat
@@ -611,7 +633,7 @@ body
     width: 10px
     height: 10px
     border-radius: 50%
-    background: #D8E2EB
+    background: #40759b
   &:before
     top: 0
   &:after
@@ -621,7 +643,7 @@ body
       margin-bottom 50px
       position: relative
       a
-        color #333
+        color #999
         &:hover
           color: #5483B1
         &:before
@@ -646,7 +668,7 @@ body
           width: 10px
           height: 10px
           border-radius: 50%
-          background: #D8E2EB
+          background: #5483b1
           -webkit-box-shadow: 0 0 3px #D8E2EB inset
           box-shadow: 0 0 3px #D8E2EB inset
     li:hover
@@ -700,9 +722,10 @@ body
   padding: 30px 0
   .footer-info
     line-height: 2
-    color: #333
+    color: #999
     text-align: center
     font-size .925em
+    background: rgba(0,0,0,0.8)
     a
       color: #40759b
       margin 0 6px
@@ -713,7 +736,7 @@ body
       margin 0 6px 0 0
       padding 0 2px
       &.fa-github
-        color #000
+        color #FFF
         &:hover
           color:#4078c0
       &.fa-weibo
@@ -723,7 +746,7 @@ body
       &.fa-email
         color: #756E78
         &:hover
-          color #000
+          color #FFF
     p
       a
         margin 0
@@ -738,9 +761,10 @@ body
     padding: 5px 5px
     margin: 0 5px 5px 0
   .current
-    background: #FFF
+    background: #0c364e;
+    border-color: #5483b1;
     &:hover
-      border-bottom-color: #adc2d7
+      border-color: #5483b1;
   .page-number,.extend
     display: inline-block
     margin: 0 5px 5px 0
@@ -750,11 +774,12 @@ body
     line-height: 25px
     padding: 5px 9px
     text-align: center
-    -webkit-box-shadow: 1px 2px 3px #adc2d7
-    box-shadow: 1px 2px 3px #adc2d7
+    -webkit-box-shadow: 0 0 5px #adc2d7 inset;
+    box-shadow: 0 0 5px #adc2d7 inset;
     border: 1px solid #adc2d7
+    background: rgba(0,0,0,0.8)
     &:hover
-      border-bottom-color: #FFF
+      border-color: #5483b1;
     &.prev:before
         font-family: "iconfont"!important
         content: "\e00f"
@@ -767,16 +792,17 @@ body
 .label-title
   margin-top: 1.1em
   font-size: 22px
-  color: #333
+  color: #999
   font-weight: bold
   .fa
     display: inline-block
-    background: #F2F7FB
+    background: rgba(0,0,0,0.8)
     color #5483b1
-    padding: 0 10px
-    border-radius: 30px 0 0 30px
+    padding: 0 20px
+    border-radius: 30px
     margin: 0 5px
     font-size: 20px
+    box-shadow: 0 0 10px #adc2d7 inset
 /* read more*/
 .readmore
   a
@@ -804,7 +830,7 @@ body
     max-width: 49%
     line-height: 25px
     font-size: 15px
-    color: #555
+    color: #aaa
     border-bottom: none
     position: relative;
     white-space: normal;
@@ -940,7 +966,7 @@ table
     border-bottom-width: 2px
   tr
     &:nth-child(2n)
-      background: #f4fcff
+      background: #0b242d
   td
     padding: 5px 10px
     border 1px solid #d8e2eb
@@ -970,22 +996,6 @@ table
     position: relative
     bottom: 0
     width: 100%
-    label
-      color:#FFF
-    input
-      color:#FFF
-      background: transparent
-      border: 1px solid #e2eaf1;
-      -webkit-box-shadow: 0 0 10px #adc2d7 inset;
-      box-shadow: 0 0 10px #adc2d7 inset;
-      &:-ms-input-placeholder
-        color: #FFF
-      &:-moz-placeholder
-        color: #FFF
-      &::-moz-placeholder
-        color: #FFF
-      &::-webkit-input-placeholder
-        color: #FFF
   #nav-menu
     position: relative
     text-align: center

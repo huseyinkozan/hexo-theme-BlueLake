@@ -1,3 +1,4 @@
+# Türk dili（土耳其语）
 blog: Günce
 albums: Albümler
 categories: Sınıflandırmalar
@@ -12,7 +13,9 @@ notitle: Başlıksız
 blogroll: Bağlantılar
 history: Geçmiş
 rss: RSS
+hits: Isabetler
 guestbook: Yorumlar
+participate: Katıl
 home: Giriş
 recent_comments: Güncel Yorumlar
 Readmore: Devamını Okuyun
@@ -21,4 +24,11 @@ contents: İçerik
 shareto: Paylaş
 reading_label: Listelenen
 search: Arama
-baidusitemap: Baidu Site Haritası
+baidusitemap: Site Haritası
+footer_rss: Bu siteye abone ol
+contact_author: Blogcu ile iletişim kurun
+topped: pinned
+copyright_author: Orijinal yazar
+copyright_link: Orijinal bağlantı
+copyright_notice: Telif hakkı beyanı
+copyright_details: Lütfen yeniden yazdırmanın kaynağını belirtin (yazarın imzasını ve bağlantısını saklamalı)
