@@ -17,10 +17,10 @@ pre
     border-radius: 5px
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125)
     font-size: 13px
-    color: #333
+    color: #999
     background: #f7f8f8
 figure.highlight,.codeblock
-  background: #f7f8f8
+  background:#021825
   margin: 10px 0
   line-height: 1.1em
   padding-top: 15px
@@ -31,7 +31,6 @@ figure.highlight,.codeblock
     font-size: 13px
     padding: 0 15px 20px
     margin: 0
-    background: #f7f8f8
     color: #999999
     a
       float: right
@@ -58,20 +57,21 @@ figure.highlight,.codeblock
     .gutter
       display: none
   .gutter
-    background: #f7f8f8
-    border-right: 1px solid #e6e6e6
+    border-right: 1px solid #40759b
     padding: 0.3em 15px
     .line
       color: #aaaaaa
   .line
     font-size: 13px
-    color: #000
+    color: #eee
     &.marked
       background: #f5e3de
-
   .code
     padding: 0.3em 15px 0.3em 1em
     width: 100%
+    /* pre
+      white-space: pre-wrap
+      word-wrap: break-word */
 
 .gist .line,.gist .line-number
   font-family: Source Code Pro, Monaco, Menlo, Consolas, monospace
@@ -80,9 +80,11 @@ figure.highlight,.codeblock
 /* code highlight color*/
 .highlight
   .comment
-    color: #aeaeae
+    color: #444
   .title
     color: #888
+  .doctag
+    color: #969896
   .meta
   .tag
     color: #324977
@@ -94,7 +96,7 @@ figure.highlight,.codeblock
   .header,
   .ruby .symbol,
   .xml .cdatabody
-    color:  #920000
+    color: #4df799
   .keyword,
   .javascript .function
     color: #ec25ec
@@ -122,7 +124,7 @@ figure.highlight,.codeblock
       .shebang
         color: #969896
       .variable
-        color: #333
+        color: #999
   &.coffeescript
     .code
       .subst,.regexp,.attribute
@@ -146,7 +148,7 @@ figure.highlight,.codeblock
   &.cs
     .code
       .preprocessor,.preprocessor .keyword
-        color: #333
+        color: #999
       .xmlDocTag,.doctag
         color: #63a35c
       .number,.built_in
@@ -158,7 +160,7 @@ figure.highlight,.codeblock
       .id,.class,.pseudo,.selector-pseudo
         color: #795da3
       .attr_selector,.value
-        color: #333
+        color: #999
       .attribute,.hexcolor,.number,.function
         color: #0086b3
       .at_rule,.important,.meta
@@ -184,7 +186,7 @@ figure.highlight,.codeblock
   &.ini
     .code
       .value,.keyword
-        color: #333
+        color: #999
       .setting,.attr
         color: #a71d5d
       .chunk,.meta
@@ -196,7 +198,7 @@ figure.highlight,.codeblock
     .code
       .tag
         .title
-          color: #333
+          color: #999
       .regexp
         color: #df5000
       .javadoc
@@ -213,10 +215,10 @@ figure.highlight,.codeblock
         color: #795da3
       .number
         color: #0086b3
-      .javadoc
+      .javadoc,.doctag
         color: #969896
       .params
-        color: #1d3e81
+        color: #6295fb
       .meta,.annotation,.javadoctag
         color: #a71d5d
   &.mak
@@ -224,7 +226,7 @@ figure.highlight,.codeblock
       .title
         color: #795da3
       .constant
-        color: #333
+        color: #999
       .keyword,.meta-keyword
         color: #0086b3
   &.json
@@ -250,7 +252,7 @@ figure.highlight,.codeblock
       .regexp
         color: #183691
       .variable
-        color: #333
+        color: #999
   &.objectivec
     .code
       .title
@@ -302,7 +304,7 @@ figure.highlight,.codeblock
   &.xml
     .code
       .tag
-        color: #333
+        color: #999
       .value
         color: #183691
       .title,.name
@@ -342,7 +344,7 @@ figure.highlight,.codeblock
       .id,.pseudo,.class,.preprocessor,.selector-class,.selector-id
         color: #795da3
       .variable
-        color: #333
+        color: #999
   &.stylus
     .code
       .tag,.selector-tag
@@ -373,5 +375,4 @@ figure.highlight,.codeblock
         color: #fb6a00
       .line,.attr
         color: #795da3
-      .line,.string,.type,.literal,.meta
-        color: #920000
+
