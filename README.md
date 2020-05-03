@@ -4,9 +4,9 @@
 
 一个简洁轻量化的响应式[Hexo](https://hexo.io/)博客主题。
 
-- [点击预览](http://chaoo.oschina.io/)
+- 点击预览[【深色主题】](https://chaooo.github.io/)、[【浅色主题】](https://chaoo.oschina.io/)
 
-[![BlueLake template preview](http://obzf7z93c.bkt.clouddn.com/themeBlueLake.png "BlueLake template preview")](http://chaoo.oschina.io/)
+[![BlueLake template preview](http://cdn.chaooo.top/hexo/BlueLake.jpg)](https://chaooo.github.io/)
 
 ## 安装
 
@@ -14,7 +14,7 @@
 
 ```shell
 $ git clone https://github.com/chaooo/hexo-theme-BlueLake.git themes/BlueLake
-$ npm install hexo-renderer-jade --save
+$ npm install hexo-renderer-jade@0.3.0 --save
 $ npm install hexo-renderer-stylus --save
 ```
 ### 启用
@@ -46,7 +46,10 @@ git pull
 ##########################
 
 # Theme version
-version: 2.0.0
+version: 2.0.2
+
+# Theme tone
+dark: false #true/false  #切换为true,即可体验深色主题
 
 # Header
 menu:
@@ -80,6 +83,7 @@ toc:
 # Static files
 js: js
 css: css
+share_path: share
 
 # Extensions
 Plugins:
@@ -102,6 +106,16 @@ baidusitemap:
 #Local search
 local_search: true ## Use a javascript-based local search engine, true/false.
 
+#Copyright
+copyright: 
+  enable: true #display article copyright information, true/false.
+  describe: 转载请注明出处 #copyright description
+  
+# MathJax Support
+mathjax:
+  enable: false  #true/false.
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
 #Cmments
 comment:
   duoshuo: #chaooo ## duoshuo_shortname
@@ -112,11 +126,29 @@ comment:
   changyan: ## 畅言需在下方配置两个参数，此处不填。
     appid: ## 畅言(appid)
     appkey: ##畅言(appkey)
+  gitalk:
+    enable: false ## If you want to use Gitment comment system please set the value to true.
+    owner: ## Your GitHub ID, e.g. username
+    repo: ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
+    client_id: ## GitHub client ID, e.g. 75752dafe7907a897619
+    client_secret: ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+    admin: ## Github repo owner and collaborators, only these guys can initialize github issues.
+    language: zh-CN ## Language
+    pagerDirection: last # Comment sorting direction, available values are last and first.
 
 #Share
-baidu_share: true ## 百度分享
-JiaThis_share: ##true ##JiaThis分享
-duoshuo_share: #true ##true 多说分享必须和多说评论一起使用。
+share:
+  local_share: true ##本地分享
+  baidu_share: #true ## 百度分享
+  JiaThis_share: ##true ##JiaThis分享
+  duoshuo_share: #true ##true 多说分享必须和多说评论一起使用。
+  addToAny_share: # AddToAny share. Empty list hides. List items are service name at url. For ex: email for '<a href="https://www.addtoany.com/add_to/email?linkurl=...'
+  #  - twitter
+  #  - baidu
+  #  - facebook
+  #  - google_plus
+  #  - linkedin
+  #  - email
 
 # Analytics
 google_analytics: ## Your Google Analytics tracking id, e.g. UA-42025684-2
@@ -127,14 +159,25 @@ show_category_count: true ## If you want to show the count of categories in the 
 widgets_on_small_screens: true ## Set to true to enable widgets on small screens.
 busuanzi: true ## If you want to use Busuanzi page views please set the value to true.
 
-# About page 
+# About page
 about:
-  photo_url: ## Your photo e.g. http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg
-  email: ## Your email e.g.  zhenggchaoo@gmail.com
-  weibo_url: ## Your weibo's url e.g.  http://weibo.com/zhengchaooo
-  weibo_name: ## Your weibo's name e.g.  秋过冬漫长
-  github_url: ## Your github'url e.g.  https://github.com/chaooo
-  github_name: ## Your github'name e.g.  chaooo
+  photo_url: ## Your photo e.g. http://cdn.chaooo.top/hexo/Avatar.jpg
+  items:
+  - label: email
+    url: ## Your email with mailto: e.g.  mailto:zhenggchaoo@gmail.com
+    title: ## Your email e.g.  zhenggchaoo@gmail.com
+  - label: github
+    url: ## Your github'url e.g.  https://github.com/chaooo
+    title: ## Your github'name e.g.  chaooo
+  - label: weibo
+    url: ## Your weibo's url e.g.  http://weibo.com/zhengchaooo
+    title: ## Your weibo's name e.g.  秋过冬漫长
+  - label: twitter
+    url:
+    title:
+  - label: facebook
+    url:
+    title:
 
 # Friend link
 links:
@@ -152,7 +195,7 @@ links:
 - **Toc** - 文章目录
 - **Static files** - 静态文件目录，以方便CDN使用。
 - **Local search**
-- self_search - 默认本地JS搜索. 
+- self_search - 默认本地JS搜索.
 - **Cmments**
 - duoshuo - 若使用[多说评论](http://duoshuo.com)，注册多说后在这填写short_name(用于评论与分享)。
 - disqus - 若使用[Disqus评论](https://disqus.com)，注册Disqus后在这填写short_name。
@@ -193,7 +236,7 @@ language: zh-CN
 
 #### 自定义page页面
 在`source`文件夹中创建文件夹`index.md`来添加页面，并在`index.md`的`front-matter'中添加`layout：page`。
-Create folders inlcuding `index.md` in `source` folder to add pages, and add a `layout: page` in `front-matter` of `index.md`. 
+Create folders inlcuding `index.md` in `source` folder to add pages, and add a `layout: page` in `front-matter` of `index.md`.
 
 #### About页面
 此主题默认page页面是关于我页面的布局，生成一个关于我页面：
@@ -202,14 +245,30 @@ $ hexo new page 'about'
 ```
 配置照片地址、邮箱、微博链接、微博名、GitHub链接、Github名：
 ```YAML
-# About page 
+# About page
 about:
-  photo_url: ## Your photo e.g. http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg
-  email: ## Your email 
-  weibo_url: ## weibo photo 
-  weibo_name: ## Your weibo's name 
-  github_url: ## Your github'url 
-  github_name: ## Your github'name 
+  photo_url: ## Your photo e.g. http://cdn.chaooo.top/hexo/Avatar.jpg
+  items:
+  - label: email
+    icon: fa-email
+    url: ## Your email with mailto: e.g.  mailto:zhenggchaoo@gmail.com
+    title: ## Your email e.g.  zhenggchaoo@gmail.com
+  - label: github
+    icon: fa-github
+    url: ## Your github'url e.g.  https://github.com/chaooo
+    title: ## Your github'name e.g.  chaooo
+  - label: weibo
+    icon: fa-weibo
+    url: ## Your weibo's url e.g.  http://weibo.com/zhengchaooo
+    title: ## Your weibo's name e.g.  秋过冬漫长
+  - label: twitter
+    icon: fa-twitter
+    url:
+    title:
+  - label: facebook
+    icon: fa-facebook
+    url:
+    title:
 ```
 [点击预览About页面](http://chaoo.oschina.io/about/)
 
@@ -252,6 +311,36 @@ jsonContent:
 
 #### 语言
 该主题目前有七种语言：简体中文（zh-CN），繁体中文（zh-TW），英语（en），法语（fr-FR），德语（de-DE），韩语 （ko）,西班牙语（es-ES）,欢迎修改主题并翻译成其他语言。
+
+
+
+#### 评论
+目前主题集成六种第三方评论，分别是[多说评论](http://duoshuo.com)、[Disqus评论](https://disqus.com)、[来必力评论](https://livere.com)、[友言评论](http://www.uyan.cc/)、[网易云跟帖评论](https://gentie.163.com/info.html)、[畅言评论](http://changyan.kuaizhan.com)、基于Github Issue的[GITALK](https://gitalk.github.io/)，推荐[gitalk](https://gitalk.github.io/)。
+1. 需要 GitHub Application，如果没有[点击这里申请](https://github.com/settings/applications/new)。
+  - Application name： 应用名称，随意
+  - Homepage URL： 网站URL，对应自己博客地址
+  - Application description ：描述，随意
+  - Authorization callback URL：# 网站URL，博客地址就好
+  - 点击注册，页面会出现其中**Client ID**和**Client Secret**在后面的配置中需要用到
+
+2. 配置`主题_config.yml`：
+``` yml 主题_config.yml https://github.com/chaooo/hexo-theme-BlueLake/blob/master/_config.yml themes/BlueLake/_config.yml
+#Cmments
+comment:
+  gitalk:
+    enable: true ## 开启gitalk
+    owner: ## GitHub的用户名
+    repo: ## 此评论存放的GitHub仓库
+    client_id: ## 复制刚才生成的clientID，例如. 75752dafe7907a897619
+    client_secret: ## 复制刚才生成的clientSecret，例如. ec2fb9054972c891289640354993b662f4cccc50
+    admin: ## Github的用户名
+    language: zh-CN ## Language
+    pagerDirection: last # Comment sorting direction, available values are last and first.
+```
+
+## 更多配置
+更多详细配置请移步：[【Hexo博客折腾】BlueLake博客主题的详细配置](https://chaooo.github.io/article/20161229.html)
+
 
 ## Solutions
 - 检查您当前的hexo的根目录，是否包含`source /`，`themes /`等。
